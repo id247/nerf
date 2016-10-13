@@ -15,15 +15,16 @@
 	line-height: 1;
 
 	font-family: $mainFontFamily;
+	background-color: transparent;
 
 	cursor: pointer;
 
 	&:disabled{
-		background: #ccc;
-		cursor: default;
-		&:hover{
-			background: #ccc;
-		}
+		//background: #ccc;
+		//cursor: default;
+		//&:hover{
+		//	background: #ccc;
+		//}
 	}
 
 
@@ -57,7 +58,26 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-
+	
+	&--1{
+		text-indent: -9999px;
+		@include sprite($button-1);
+	}
+	
+	&--2{
+		text-indent: -9999px;
+		@include sprite($button-2);
+	}
+	
+	&--3{
+		text-indent: -9999px;
+		@include sprite($button-3);
+	}
+	
+	&--4{
+		text-indent: -9999px;
+		@include sprite($button-4);
+	}
 
 }
 
@@ -71,12 +91,33 @@
 
 	&__line{
 		@include clearfix;
-		margin-bottom: 16px;
+		margin-bottom: 20px;
+
+		.form__input-placeholder{
+			float: right;
+			width: 54%;
+			margin-bottom: 0;
+
+			&:first-child{
+				float: left;
+				width: 40%;
+			}
+		}
+	}
+
+	&__label{
+		font-size: 18px;
+		margin: 0 0 10px;
+		display: block;
+
+		&--center{
+			text-align: center;
+		}
 	}
 
 	&__input-placeholder{
 		position: relative;
-		margin-bottom: 16px;
+		margin-bottom: 20px;
 
 		&--inline{
 			width: 48%;
@@ -90,7 +131,8 @@
 
 	label.error{
 		font-size: 13px;
-		color: #ef6d51;
+		color: red;
+		display: none!important;
 		//position: absolute;
 		//top: -13px;
 		//right: 0;
@@ -105,7 +147,8 @@
 	}
 
 	&__button-placeholder{
-		margin-top: 20px;
+		margin-top: 35px;
+		text-align: center;
 	}
 
 	&__input,
@@ -114,21 +157,22 @@
 		padding: 0 0 0 20px;
 		width: 100%;
 		outline: none;
-		border: 1px solid #d7d7d7;
+		border: 1px solid #fff;
 		max-width: 100%;
-		font-size: 15px;
+		font-size: 18px;
 		font-family: $mainFontFamily;
-		background: #f6f5f1;
-		border-radius: 5px;
-		box-shadow: inset 0 2px 3px rgba(0,0,0,.13); 
+		background: #fff;
+		border-radius: 0px;
+		//box-shadow: inset 0 2px 3px rgba(0,0,0,.13); 
 		&.error{
-			border-color: #ef6d51;
+			border-color: red;
+			background: #ffe2e2;
 		}
 	}
 	&__input{
-		&--h40{
-			height: 40px;
-			line-height: 40px;
+		&--m{
+			height: 50px;
+			line-height: 50px;
 		}
 	}
 	&__textarea{
@@ -138,8 +182,43 @@
 			height: 120px;
 		}
 	}
+
+	&__success{
+		padding-top: 20px;
+		text-align: center;
+		font-size: 22px;
+	}
 }
 
+.form-inline{
+	
+	text-align: center;
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 20px;
+	}
+}
+
+
+/* ==========================================================================
+ * form-inline-select
+ * ========================================================================== */
+
+.form-inline-input{
+
+	&__label{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 15px 0 0;		
+	}
+
+	&__input{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
 
 /* ==========================================================================
  * checkbox
@@ -152,5 +231,89 @@
 	&__input{
 		margin: -2px 0 0;
 
+	}
+}
+
+/* ==========================================================================
+ * radio
+ * ========================================================================== */
+
+.radio{
+	display: block;
+	height: 40px;
+	width: 40px;
+
+	&__input{
+		position: absolute;
+		left: -9999px;
+
+		&:checked + .radio__text:before{
+			@include sprite($radio-selected);
+		}
+	}
+
+	&__text{
+		display: block;
+		font-size: 22px;
+		//padding: 0 0 0 74px;
+		position: relative;
+		line-height: 36px;
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include sprite($radio);
+		}
+	}	
+}
+
+
+/* ==========================================================================
+ * select
+ * ========================================================================== */
+
+.select{
+	border: 0px solid #fff;
+	border-radius: 0px;
+	background: #fff;
+	text-align: left;
+	overflow: hidden;
+	position: relative;
+	height: 50px;
+	min-width: 120px;
+
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0px;
+		bottom: 0;
+		margin: auto;
+		@include sprite($select);
+	}
+
+	&__select-placeholder{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: -35px;
+		bottom: 0;		
+	}
+
+	&__select{
+		-webkit-appearance: none;
+		border: 0;
+		background: transparent;	
+		font-size: 18px;
+		font-family: $mainFontFamily;
+		line-height: 50px;
+		height: 50px;
+		padding: 0 0 0 20px;
+		margin: 0;
+		width: 100%;
+		display: block;
+		outline: none;
 	}
 }

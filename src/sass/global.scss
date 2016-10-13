@@ -3,13 +3,21 @@
  * ========================================================================== */
 
 .html{
-	min-width: 1020px;
+	min-width: 1200px;
 	-webkit-font-smoothing: antialiased;
 	text-size-adjust: none;
 	font-size: 16px;
 	line-height: 1.2;
 	font-family: $mainFontFamily;
 	color: $text;
+
+	background: #156367 url(../images/bg/bg-1.jpg) 50% 0 no-repeat;
+	height: image-height('../assets/images/bg/bg-1.jpg');
+
+	&--form{
+		background-image: url(../images/bg/bg-2.jpg);
+		height: image-height('../assets/images/bg/bg-2.jpg');
+	}
 }
 
 .html__body{
@@ -42,7 +50,7 @@
 
 .text{
 	font-size: 18px;
-	line-height: (26/18);
+	line-height: (21/18);
 
 	h3{
 		font-size: 24px;

@@ -1,21 +1,27 @@
 @charset "UTF-8";
 
-// @font-face {
-//     font-family: 'font';
-//     src: url('../fonts/fonr.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'Bender';
+    src: url('../fonts/Bender-Black.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bender';
+    src: url('../fonts/Bender-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-
-$mainFontFamily: Helvetica, sans-serif;
+$bender: 'Bender';
+$mainFontFamily: $bender, Helvetica, sans-serif;
 
 //
 //colors
 //
 
 
-$text: #1c1c1c;
+$text: #303030;;
 
 //
 //medias

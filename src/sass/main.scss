@@ -21,16 +21,17 @@
 
 	&__wrap{
 		@include clearfix;
-		max-width: 1000px;
-		padding: 0 10px;
+		max-width: 1200px;
+		padding: 0 15px;
 		margin: auto;
 	}
 
 	&__title{
 		text-align: center;
-		margin: 0 0 40px;
+		margin: 0 0 30px;
 		font-weight: 700;
-		font-size: 36px;
+		font-size: 22px;
+		text-transform: uppercase;
 		line-height: (50/36);
 	}
 
@@ -39,4 +40,141 @@
 	}
 }
 
- 
+
+/* ==========================================================================
+ * header
+ * ========================================================================== */
+
+.header{
+	height: 235px;
+	padding: 54px 0 0;
+
+	&__content{
+		margin: 0 auto;
+		@include sprite($header);
+		position: relative;
+	}
+
+	&__logo{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 180px;
+		text-indent: -9999px;
+	}
+
+
+	&__dnevnik{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 180px;
+		text-indent: -9999px;
+	}
+
+}
+
+
+/* ==========================================================================
+ * about
+ * ========================================================================== */
+
+.about{
+	height: 670px;
+	padding: 30px 0 20px; 
+
+	&__title{
+		
+	}
+
+	&__text{
+		width: 670px;
+		margin: 0 auto 20px;	
+	}
+
+	&__buttons{
+		text-align: center;
+	}
+
+	&__button-placeholder{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 20px;
+		&:first-child{
+			margin-top: 32px;
+		}
+	}
+}
+
+/* ==========================================================================
+ * faq
+ * ========================================================================== */
+
+.faq{
+	margin: 0 0 50px;
+
+	&__title{
+		
+	}
+
+	&__list{
+		width: 830px;
+		margin: 0 auto 20px;
+		padding: 0 0 0 100px;
+	}
+
+	&__item{
+		margin: 0 0 15px;
+		min-height: 30px;
+		position: relative;
+		padding: 0 0 0 50px;
+		&:before{
+			content: '';
+			position: absolute;
+			top: -5px;
+			left: 0;
+			@include sprite($bullet);
+		}
+	}
+
+	&__button-placeholder{
+		text-align: right;
+		width: 800px;
+		margin: auto;
+	}
+}
+
+/* ==========================================================================
+ * video
+ * ========================================================================== */
+
+.video{
+
+	&__title{
+		
+	}
+
+	&__frame{
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+
+/* ==========================================================================
+ * registration
+ * ========================================================================== */
+
+.registration{
+	
+	&__text{
+		text-align: center;
+	}
+
+	&__form{
+		width: 670px;
+		margin: auto;
+	}
+}
